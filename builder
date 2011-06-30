@@ -22,10 +22,11 @@ if [ -f $DROPBOX/build ]; then
     if [ -f $ANDROID/out/target/product/galaxysmtd/update-cm-7.1.0-GalaxyS-KANG-signed.zip ]; then
 	rm $DROPBOX/update.zip;
 	echo "Build Successful" >> $DROPBOX/log;
+	rm $DROPBOX/build;
     else
         echo "Build failed" >> $DROPBOX/log;
     fi
     echo "Copying File" >> $DROPBOX/log;
-    cp $ANDROID/out/target/product/galaxysmtd/update-cm-7.1.0-GalaxyS-KANG-signed.zip $DROPBOX/build/;
+    cp $ANDROID/out/target/product/galaxysmtd/update-cm-7.1.0-GalaxyS-KANG-signed.zip $DROPBOX/update.zip;
     echo "Syncing Dropbox" >> $DROPBOX/log;
 fi
